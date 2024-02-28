@@ -33,7 +33,7 @@ app.get('/api/:date?', (req, res) => {
   } else {
     date = new Date(date_string);
     if(isNaN(date.getTime())) {
-      date = new Date(parseInt(date_string));
+      res.send({error: "Invalid Date"})
     }
   }
 
